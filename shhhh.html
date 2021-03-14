@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Codystar&family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
+<title>What to do today.</title>
+</head>
+<style>
+body{
+background-color: purple;
+}
+h1{
+font-family: 'Codystar', cursive;
+color: lightpurple;
+margin: auto;
+margin-top: 20px;
+}
+#button{
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+color: purple;
+margin: auto;
+margin-top: 20px;
+width: 60px;
+background-color: #ff99ff;
+padding: 11px;
+border-radius: 10%;
+}
+#button:hover{
+background-color: white;
+cursor: pointer;
+}
+#box{
+display: flex;
+justify-content: space-evenly;
+}
+.answer{
+font-family: 'Montserrat', sans-serif;
+font-weight: bold;
+text-align: center;
+font-size: 40px;
+color: #1f021a;
+}
+.hide{
+display:none;
+}
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+</style>
+<body>
+<h1 class="glow">What Should Danielle Do Today?</h1>
+<div id="button" onclick="tellMe()">tell me</div>
+<div id="box">
+<p id="A" class="answer hide">Tell Annie a joke.</p>
+<p id="B" class="answer hide">Spend hours drawing Annie's face from her old facebook profile pic.</p>
+<p id="C" class="answer hide">Buy Annie a present.</p>
+<p id="D" class="answer hide">Tell Annie a secret.</p>
+<p id="E" class="answer hide">Tell Annie you love RPGs.</p>
+<p id="F" class="answer hide">Plan and create an indepth, narrative-driven escape room to surprise Annie with.</p>
+<p id="G" class="answer hide">Learn a vegetarian recipe that Annie would like.</p>
+<p id="H" class="answer hide">Give Annie a compliment.</p>
+<p id="I" class="answer hide">Send a pretty item to Bugleweed of SLUGisle.</p>
+<p id="J" class="answer hide">Write Annie a letter.</p>
+<p id="K" class="answer hide">Remember to jot down what was said when Annie comes up in conversation so you can tell her about it later.</p>
+<p id="L" class="answer hide">Tell Annie a cool fact you know.</p>
+<p id="M" class="answer hide">Get a fun, new puzzle to do with Annie.</p>
+<p id="N" class="answer hide">Send Annie your favortie picture of her.</p>
+<p id="O" class="answer hide">Consider getting a mattress that doesn't feel like sludge to Annie.</p>
+</div>
+</body>
+<script>
+var answers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"];
+var unusedAnswers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"];
+var usedAnswers = [];
+function tellMe(){
+console.log("before function:");
+console.log("unusedAnswers");
+console.log(unusedAnswers);
+console.log("usedAnswers");
+console.log(usedAnswers);
+	if (unusedAnswers.length==0){//if every answer has been used
+		while (usedAnswers.length>0){
+			unusedAnswers.push(usedAnswers.pop());
+		}
+		console.log("reset");
+	}
+	var showThis =Math.floor(Math.random()*unusedAnswers.length);
+	var hideThese = [];
+	for (i=0; i<answers.length; i++){
+		if (answers[i]!=unusedAnswers[showThis]){
+			hideThese.push(answers[i]);
+		}
+	}
+	//console.log(hideThese);
+  	document.getElementById(unusedAnswers[showThis]).classList.remove("hide");
+ 	 for (i=0; i<hideThese.length; i++){
+		console.log("hide");
+		console.log(hideThese[i]);
+		document.getElementById(hideThese[i]).classList.add("hide");
+		console.log("hidden?");
+		console.log(document.getElementById(hideThese[i]).classList);
+	}
+	usedAnswers.push(unusedAnswers[showThis]);
+console.log("the answer:");
+console.log(unusedAnswers[showThis]);
+	unusedAnswers.splice(showThis, 1);
+console.log("after function:");
+console.log("unusedAnswers");
+console.log(unusedAnswers);
+console.log("usedAnswers");
+console.log(usedAnswers);
+
+}
+
+</script>
+</html>
