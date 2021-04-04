@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans&family=Rock+Salt&display=swap');
+body{
+  background-color: #ff85ca;
+}
+#green-border{
+  border: 1vw solid #ff4daf;
+  width: 81vw;
+  height: 89vh;
+  position: absolute;
+  z-index: -2;
+  margin-left: 8vw;
+  margin-top: -1.25vw;
+  border-radius: 10%;
+}
+.bg-img{
+  height: 100vh;
+  width: auto;
+  z-index: -1;
+  position: absolute;
+  margin: -5vh 0 0 0;
+}
+.bg-img img{
+  height: 100%;
+  width: auto;
+}
+#rightImg{
+  margin-left: 77vw;
+}
+#stretch{
+  width: 40vw;
+  height: 1vw;
+  margin-left: 100%;
+}
+#allContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 75vw;
+  height: 82vh;
+  padding: 1vh 2vw 1vh 2vw;
+  border-radius: 10%;
+  border: 1vw solid #ff99ff;
+  margin: 5vh auto auto auto;
+  background-color: #ffccee;
+}
+h1{
+  font-family: 'Codystar', cursive;
+  color: lightpurple;
+}
+#button{
+  font-family: 'Encode Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.5vw;
+  color: purple;
+  width: 8.5vw;
+  background-color: #ff99ff;
+  text-align: center;
+  padding: 1vw 0 1vw 0;
+  border-radius: 10%;
+  z-index: 10;
+}
+#button:hover{
+  background-color: #9ee034;
+  cursor: pointer;
+}
+#box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  width: 80%;
+}
+#answer{
+  font-family: 'Rock Salt', cursive;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3vw;
+  color: #ff4daf;
+}
+.hide{
+  display:none;
+}
+
+/*got online somewhere*/
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
